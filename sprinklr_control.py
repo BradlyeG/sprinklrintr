@@ -8,7 +8,7 @@
 # python functions. This program will sit and wait for those calls to do something
 
 # Libraries
-import gpizero
+import gpiozero
 
 # Pin Definitions
 IN_SOL_PIN = 23
@@ -17,10 +17,10 @@ IN_FLW_MTR = 14
 OUT_FLW_MTR = 15
 
 # Devices and objects
-in_sol_ctlr = gpizero.DigitalOutputDevice(IN_SOL_PIN)
-out_sol_ctrl = gpizero.DigitalOutputDevice(OUT_SOL_PIN)
-in_flw_ctrl = gpizero.DigitalInputDevice(IN_FLW_MTR, True) # True to enable internal pull up resistor on pi
-out_fwl_ctrl = gpizero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable internal pull up resistor on pi
+in_sol_ctlr = gpiozero.DigitalOutputDevice(IN_SOL_PIN)
+out_sol_ctrl = gpiozero.DigitalOutputDevice(OUT_SOL_PIN)
+in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True) # True to enable internal pull up resistor on pi
+out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable internal pull up resistor on pi
 
 while True:
     in_sol_ctrl.blink()
