@@ -9,6 +9,7 @@
 
 # Libraries
 import gpiozero
+from time import sleep
 
 # Pin Definitions
 IN_SOL_PIN = 23
@@ -25,3 +26,4 @@ out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable i
 while True:
     in_sol_ctrl.blink()
     out_sol_ctrl.blink()
+    sleep(0)
