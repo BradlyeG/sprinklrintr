@@ -17,7 +17,7 @@ IN_FLW_MTR = 14
 OUT_FLW_MTR = 15
 
 # Devices and objects
-in_sol_ctlr = gpiozero.DigitalOutputDevice(IN_SOL_PIN)
+in_sol_ctrl = gpiozero.DigitalOutputDevice(IN_SOL_PIN)
 out_sol_ctrl = gpiozero.DigitalOutputDevice(OUT_SOL_PIN)
 in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True) # True to enable internal pull up resistor on pi
 out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable internal pull up resistor on pi
