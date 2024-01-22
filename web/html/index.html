@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -14,7 +15,7 @@
     <h3 style="color: white;">Rainwater Meter Dashboard</h3>
   </div>
 
-<nav class="navbar navbar-default" style="background-color: azure;">
+  <nav class="navbar navbar-default" style="background-color: azure;">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-cloud"></span></a>
@@ -25,7 +26,58 @@
       <li><a href="#">Settings</a></li>
     </ul>
   </div>
-</nav>
+  </nav>
+
+  <div class="container-fluid">
+    <canvas id="rwUsageChart"></canvas>
+  </div>
+  
+  <script>
+    //chart data here
+    var data = {
+      labels:['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+      datasets: [
+        {
+          label: 'Collected Rainwater',
+          backgoundColor: 'rgba(75, 192, 192, 0.7)',
+          data: [0,0,10,4,1,0,0]
+        },
+        {
+          label: 'Tap Water Used',
+          backgoundColor: 'rgba(255, 99, 132, 0.7)',
+          data: [3,3,0,0,0,0,0]
+        },
+        {
+          label: 'Total Water Used',
+          backgoundColor: 'rgba(255, 206, 86, 0.7)',
+          data: [3,3,3,3,3,3]
+        }
+      ]
+    };
+
+    //chart options here
+    var chartOptions = {
+      responsive: true,
+      scales: {
+        x: {
+          stacked: false
+        },
+        y: {
+          stacked: false
+        }
+      }
+    };
+
+    //canvas element
+    var ctx = document.getElementById('rwUsageChart').getContext('2d');
+
+    //actual bar chart
+    var rwStatsChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: chartOptions
+    });
+  </script>
 
 </body>
 </html>
