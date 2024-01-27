@@ -28,9 +28,138 @@
   </div>
   </nav>
 
-  <div class="container">
-    <h1>schedule</h1>
+  <div class="container-md" id="weatherCheckContainer">
+    <div class="row">
+      <div class="col-sm-5"></div>
+      <div class="col-sm-4 justify-content-center">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="useWeatherGov" id="weatherGovCheck" />
+          <label class="form-check-label" for="weatherGovCheck">Use weather.gov to schedule watering automatically</label>
+        </div>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
   </div>
 
+  <div class="container-md" id="scheduleForm">
+    <h1 class="text-center">Water Schedule</h1>
+    <div class="row">
+      <div class="col-sm-2">
+      <p></p>
+      </div>
+      <div class="col-sm-1">
+      <p>Morning</p>
+      <p>Evening</p>
+      <p>Amount</p>
+      </div>
+      <div class="col-sm-1" id="mRadio">
+      <p>Monday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="mAmount" class="form-control" />
+        <label class="form-label" for="mAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="tRadio">
+      <p>Tuesday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+     <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="tAmount" class="form-control" />
+        <label class="form-label" for="tAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="wRadio">
+      <div>
+        <p>Wednesday</p>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="wAmount" class="form-control" />
+        <label class="form-label" for="wAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="thRadio">
+      <p>Thursday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="thAmount" class="form-control" />
+        <label class="form-label" for="thAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="fRadio">
+      <p>Friday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="fAmount" class="form-control" />
+        <label class="form-label" for="fAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="stRadio">
+      <p>Saturday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="stAmount" class="form-control" />
+        <label class="form-label" for="stAmount">Liters</label>
+      </div>
+      </div>
+      <div class="col-sm-1" id="snRadio">
+      <p>Sunday</p>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSessions" id="radioNoLabel1" value="m" aria-label="morning" />
+      </div>
+      <div>
+        <input class="form-check-input" type="radio" name="scheduleSesions" id="radioNoLabel2" value="e" aria-label="evening" />
+      </div>
+      <div class="form-outline" data-mdb-input-init>
+        <input type="text" id="snAmount" class="form-control" />
+        <label class="form-label" for="snAmount">Liters</label>
+      </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-1">
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-md" id="updateConfigBtnContainer">
+    <div class="row">
+      <div class="col-sm-5"></div>
+      <div class="col-sm-4 justify-content-center">
+        <button type="button" class="btn btn-primary" data-mdb-ripple-init>Update Configuration</button>
+      </div>
+      <div class="col-sm-3"></div>
+    </div>
+
+</div> 
 </body>
 </html>
