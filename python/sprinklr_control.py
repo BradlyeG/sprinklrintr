@@ -28,8 +28,7 @@ ctrl_bool = True
 while ctrl_bool:
     in_sol_ctrl.on()
     print("sols on")
-    sleep(1.5)
+    sleep(3)
     in_sol_ctrl.off()
     print("sols off")
-    sleep(1.5)
     ctrl_bool = False
