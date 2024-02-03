@@ -21,12 +21,14 @@ OUT_FLW_MTR = 15
 
 # Sensor pulse conversion per specs, in liters
 PLS_CON = .0025
+# Bounce time to calibrate liquid flow meters
+LFM_BNC = 0.0000032
 
 # Devices and objects
 in_sol_ctrl = gpiozero.DigitalOutputDevice(IN_SOL_PIN)
 out_sol_ctrl = gpiozero.DigitalOutputDevice(OUT_SOL_PIN)
-in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True, bounce_time=0.1) # True to enable internal pull up resistor on pi and account for bounce - time for signal to change properly
-out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True, bounce_time=0.1) # True to enable internal pull up resistor on pi and account for bounce - time for signal to change properly
+in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True, bounce_time=LFM_BNC) # True to enable internal pull up resistor on pi and account for bounce - time for signal to change properly
+out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True, bounce_time=LFM_BNC) # True to enable internal pull up resistor on pi and account for bounce - time for signal to change properly
 
 # Web server's php will call this python script, grab the amount specified from the web dashboard, and pass in the water target as the first and only argument
 #water_target = float(sys.argv[1])
