@@ -28,32 +28,14 @@ in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True) # True to enable int
 out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable internal pull up resistor on pi
 
 # Web server's php will call this python script, grab the amount specified from the web dashboard, and pass in the water target as the first and only argument
-water_target = float(sys.argv[1])
+#water_target = float(sys.argv[1])
 water_amount = 0
 
 # Sensor outputs pulses when the hall effect sensor moves
 sensor_count = 0
 
-print("Water target is: " + str(water_target) + " L")
-
 # The script only needs to run once. Best practice would put this all in a class but this is a test
-while water_amount < water_target:
-    # Activate the solenoid, only if it already off
-    if not in_sol_ctrl.value:
-        in_sol_ctrl.on()
-        print("sols on")
+while True:
 
-    # If a pulse is detected
-    if in_flw_ctrl.value:
-        # Add to the total amount of pulses
-        sensor_count += 1
-        # Convert pulses to liters
-        water_amount = sensor_count * PLS_CON
-        print("Water amount: " + str(water_amount))
-
-    # We need to turn the solenoid off if we have watered enough
-    if water_amount >= water_target:
-        in_sol_ctrl.off()
-        print("sols off")
-
-
+    # Just print what the flow meters value
+    print(in_flw_ctrl.value)
