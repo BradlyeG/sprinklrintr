@@ -35,8 +35,23 @@ water_amount = 0
 sensor_count = 0
 
 # The script only needs to run once. Best practice would put this all in a class but this is a test
+
 while True:
     # Activate solenoid
     in_sol_ctrl.on()
-    # Print the value and just watch what happens in the terminal
-    print(in_flw_ctrl.value)
+    # Track the sensor count
+    if in_flw_ctrl.value:
+        sensor_count += 1
+    # print how many we have
+    print("Counted pulses:" + str(sensor_count))
+    # what to do when pulses are no longer detected
+    if not in_flw_ctrl.value:
+        sleep(1.0)
+        if not in_flw_ctrl.value:
+            in_sol_ctrl.off()
+            sys.exit()
+        else:
+            break
+
+
+    
