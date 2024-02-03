@@ -43,7 +43,7 @@ while True:
     if in_flw_ctrl.value:
         sensor_count += 1
     # print how many we have
-    print("Counted pulses:" + str(sensor_count))
+    print("Estimated Amount:" + str((sensor_count * PLS_CON)) + " liters")
     # what to do when pulses are no longer detected
     if not in_flw_ctrl.value:
         sleep(1.0)
