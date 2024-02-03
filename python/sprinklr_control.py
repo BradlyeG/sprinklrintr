@@ -34,6 +34,8 @@ water_amount = 0
 # Sensor outputs pulses when the hall effect sensor moves
 sensor_count = 0
 
+print("Water target is: " + str(water_target) + " L")
+
 # The script only needs to run once. Best practice would put this all in a class but this is a test
 while water_amount < water_target:
     # Activate the solenoid, only if it already off
