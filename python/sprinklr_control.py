@@ -25,10 +25,8 @@ out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable i
 
 while True:
     in_sol_ctrl.on()
-    out_sol_ctrl.on()
     print("sols on")
     sleep(1.5)
     in_sol_ctrl.off()
-    out_sol_ctrl.off()
     print("sols off")
     sleep(1.5)
