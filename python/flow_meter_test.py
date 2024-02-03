@@ -43,7 +43,7 @@ while True:
     if in_flw_ctrl.value:
         sensor_count += 1
     # print how many we have
-    print("Estimated Amount:" + str((sensor_count * PLS_CON)) + " liters")
+    print("Estimated Amount: " + str((sensor_count * PLS_CON)) + " liters")
 
 
 
