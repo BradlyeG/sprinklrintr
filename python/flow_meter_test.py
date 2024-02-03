@@ -36,6 +36,7 @@ sensor_count = 0
 
 # The script only needs to run once. Best practice would put this all in a class but this is a test
 while True:
-
-    # Just print what the flow meters value
+    # Activate solenoid
+    in_sol_ctrl.on()
+    # Print the value and just watch what happens in the terminal
     print(in_flw_ctrl.value)
