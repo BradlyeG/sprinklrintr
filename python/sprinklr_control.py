@@ -23,10 +23,13 @@ out_sol_ctrl = gpiozero.DigitalOutputDevice(OUT_SOL_PIN)
 in_flw_ctrl = gpiozero.DigitalInputDevice(IN_FLW_MTR, True) # True to enable internal pull up resistor on pi
 out_fwl_ctrl = gpiozero.DigitalInputDevice(OUT_FLW_MTR, True) # True to enable internal pull up resistor on pi
 
-while True:
+ctrl_bool = True
+
+while ctrl_bool:
     in_sol_ctrl.on()
     print("sols on")
     sleep(1.5)
     in_sol_ctrl.off()
     print("sols off")
     sleep(1.5)
+    ctrl_bool = False
