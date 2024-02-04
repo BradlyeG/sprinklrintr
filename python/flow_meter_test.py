@@ -22,7 +22,7 @@ OUT_FLW_MTR = 15
 # Sensor pulse conversion per specs, in liters
 PLS_CON = .0025
 # Bounce time to calibrate liquid flow meters
-LFM_BNC = 0.0000032
+LFM_BNC = 0.00032
 
 # Devices and objects
 in_sol_ctrl = gpiozero.DigitalOutputDevice(IN_SOL_PIN)
